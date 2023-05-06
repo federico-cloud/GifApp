@@ -2,7 +2,7 @@
 export const GiftExpertApp = () => {
   return (
     <>
-        GiftExpertApp
+      GiftExpertApp
     </>
   )
 }
