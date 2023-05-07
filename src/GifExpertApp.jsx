@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { AddCategory } from "./components/addCategory"
 
-export const GiftExpertApp = () => {
+export const GifExpertApp = () => {
 
   const [categories, setCategories] = useState(['One Punch', 'Dragon Ball'])
   
