@@ -1,6 +1,15 @@
+:root{
+   --main-color: #eaeaea;
+   --black: #353535;
+   --error: #f03d3d;
+}
+
 * {
      font-family: Helvetica, Arial, sans-serif;
-     background-color: rgb(234, 234, 234);
+     background-color: var(--main-color);
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
 }
 
 body {
@@ -8,14 +17,33 @@ body {
 }
 
 input {
-     background-color: white;
-     border-radius: 5px;
-     border: 1px solid rgb(97, 32, 158);
-     color: black;
-     font-size: 1.2rem;
-     outline: none;
-     padding: 10px 15px;
+     all: unset;
+     background-color: var(--main-color);
+     border-bottom: 2px solid var(--black);
+     font-size: 24px;
+     height: 50px;
      width: 100%;
+}
+
+input:focus::placeholder{
+     opacity: 0;
+}
+
+div.error-msg{
+     align-items: center;
+     display: flex;
+     height: 40px;
+}
+
+span{
+     align-items: center;
+     color: var(--error);
+     display: flex;
+     font-size: 1rem;
+     font-style: italic;
+     font-weight: bold;
+     height: 1rem;
+     margin: .2rem;
 }
 
 h2 {
