@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const AddCategory = ({setCategories: setCategorias}) => {
+export const AddCategory = ({onNewCategory}) => {
 
     const [inputValue, setInputValue] = useState('');
     const [showError, setShowError] = useState(false);
@@ -17,7 +17,7 @@ export const AddCategory = ({setCategories: setCategorias}) => {
             setShowError(true);
         } else {
             setShowError(false);
-            setCategorias(categories => [inputValue, ...categories]);
+            onNewCategory(inputValue);
             setInputValue('');
         };
     }

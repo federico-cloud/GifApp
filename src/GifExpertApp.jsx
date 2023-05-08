@@ -6,15 +6,18 @@ export const GifExpertApp = () => {
 
   const [categories, setCategories] = useState([])
   
-  const handleAddCategory = () => {
-    setCategories([...categories]);
+  const handleAddCategory = (newCategory) => {
+    if(categories.includes(newCategory)) return;
+    setCategories([newCategory,...categories]);
   }
  
   return (
     <>
       <h1>GifExpertApp</h1>
 
-      <AddCategory setCategories={setCategories}/>
+      <AddCategory 
+        onNewCategory={handleAddCategory}
+      />
 
       <ol>
         {
