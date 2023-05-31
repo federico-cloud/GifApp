@@ -1,41 +1,28 @@
 import { useEffect, useState } from "react";
 import { GridItem } from "./GridItem";
-import { getGifs } from "../helpers/getGifs";
 import { Box, CircularProgress } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import { useFetchGifs } from "../hooks/useFetchGifs";
+
 
 export const GifGrid = ({category}) => {
 
-  const [images, setImages] = useState([]);    
-  const [isLoading, setIsLoading] = useState(true);
+  const {images, isLoading} = useFetchGifs(category);
   const [isClosed, setIsClosed] = useState(false);
-
-  const getImages = async (category) => {
-    const images = await getGifs(category);
-    setIsLoading(false);
-    setImages(images);
-  }
-
-  useEffect(() => {
-    if (!isClosed) {
-      getImages(category);
-    }
-  }, [category, isClosed])
-
-  const handleClose = () => {
+  
+  const handleClose = (event) => {
+    event.target.parentNode.remove();
     setIsClosed(true);
   }
 
   return (
     <>
       {!isClosed && (
-        <div className="center">
-          <h3>{category}</h3>
-          <CloseIcon className="close" fontSize="large" onClick={handleClose} />
-        </div>
-      )}
-      {!isClosed && (
         <div>
+          <div className="center">
+            <h3>{category}</h3>
+            <CloseIcon className="close" fontSize="large" onClick={handleClose} />
+          </div>
           {isLoading ? (
             <Box 
               display="flex"
@@ -59,3 +46,12 @@ export const GifGrid = ({category}) => {
     </>
   );
 }
+  
+  
+  
+  
+  
+  
+  
+  
+  
