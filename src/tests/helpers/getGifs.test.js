@@ -20,6 +20,7 @@ describe('Test in getGifs', () => {
 
     test('must return an array of objects gifs with properties id, title, url', async() => {
         const gifs = await getGifs('amor');
+        console.log(gifs);
         expect(gifs[0]).toEqual({
             id: expect.any(String),
             title: expect.any(String),
