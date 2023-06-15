@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in GridItem  must display the componente correctly 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <a
+      href="https://www.google.com/"
+      target="_blank"
+    >
+      <img
+        alt="imagen de test"
+        src="https://www.google.com/"
+      />
+    </a>
+  </div>
+</div>
+`;
